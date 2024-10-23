@@ -1,0 +1,14 @@
+body {
+    margin: 0; /* Removes default margin */
+    padding: 20px; /* Adds padding around the body */
+    display: flex; /* Enables flexbox layout for the body */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    height: 100vh; /* Sets body height to full viewport height */
+}
+
+.flex-class {
+    display: flex; /* Enables flexbox layout for the flex-class */
+    flex-direction: column; /* Stacks child elements vertically */
+    width: 300px; /* Sets a width for the form container */
+}
