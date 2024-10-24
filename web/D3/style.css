@@ -1,0 +1,62 @@
+body {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(247, 249, 249);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #d9a7c7;  
+    background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7); 
+    background: linear-gradient(to right, #fffcdc, #d9a7c7);  */
+
+}
+
+.login-form {
+    height: 38vh;
+    width: 25vw;
+    background-color: rgb(185, 232, 190);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+    border-radius: 2px;
+    box-shadow:
+        5.8px 5.8px 4.5px rgba(0, 0, 0, 0.053),
+        19.4px 19.4px 15.2px rgba(0, 0, 0, 0.077),
+        87px 87px 68px rgba(0, 0, 0, 0.13);
+}
+
+.login-input {
+    padding: 1rem;
+    width: 80%;
+    border: 0px;
+    outline: none;
+    border-radius: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.login-input:focus {
+    border-bottom: 2px solid rgb(207, 233, 240);
+}
+
+.login-button {
+    padding: 1rem;
+    width: 85%;
+    border: 0px;
+    outline: none;
+    border-radius: 5px;
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    color: aliceblue;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.login-button:hover {
+
+    border-bottom: 2px solid rgb(86, 159, 232);
+}
