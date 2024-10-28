@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active{
+    color: cyan;
+    border: 2px solid cyan;
+}
