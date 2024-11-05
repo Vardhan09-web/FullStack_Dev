@@ -2,7 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+body{
+    margin: 0px;
+    overflow-x: hidden;
+}
 .active{
     color: cyan;
     border: 2px solid cyan;
+}
+
+*::-webkit-scrollbar-track
+{
+	border: 1px solid blueviolet;
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	background-color: blueviolet;	
 }
