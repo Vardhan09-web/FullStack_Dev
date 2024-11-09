@@ -38,16 +38,16 @@ const HomeCarousel = () => {
             <div className="px-6 py-0 sm:p-10 sm:pb-6">
               <div className="grid items-center justify-center w-full grid-cols-1 text-left">
                 <div>
-                  <h2 className="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl">
+                  <h2 className="text-lg font-medium tracking-tighter text-cyan-600 lg:text-3xl">
                     Mobiles
                   </h2>
                 </div>
                 <div className="mt-6">
                   <p>
-                    <span className="text-5xl font-semibold tracking-tight text-purple-600">
+                    <span className="text-5xl font-semibold tracking-tight text-blue-600">
                       40%
                     </span>
-                    <span className="text-base font-medium text-gray-500"> offer </span>
+                    <span className="text-base font-medium text-cyan-500"> offer </span>
                   </p>
                 </div>
               </div>
@@ -67,10 +67,10 @@ const HomeCarousel = () => {
                 </div>
                 <div className="mt-6">
                   <p>
-                    <span className="text-5xl font-semibold tracking-tight text-purple-600">
+                    <span className="text-5xl font-semibold tracking-tight text-blue-600">
                       30%
                     </span>
-                    <span className="text-base font-medium text-gray-500"> offer </span>
+                    <span className="text-base font-medium text-cyan-500"> offer </span>
                   </p>
                 </div>
               </div>
@@ -84,16 +84,16 @@ const HomeCarousel = () => {
             <div className="px-6 py-8 sm:p-10 sm:pb-6">
               <div className="grid items-center justify-center w-full grid-cols-1 text-left">
                 <div>
-                  <h2 className="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl">
+                  <h2 className="text-lg font-medium tracking-tighter text-cyan-600 lg:text-3xl">
                     Smart Watches
                   </h2>
                 </div>
                 <div className="mt-6">
                   <p>
-                    <span className="text-5xl font-semibold tracking-tight text-purple-600">
+                    <span className="text-5xl font-semibold tracking-tight text-blue-600">
                       50%
                     </span>
-                    <span className="text-base font-medium text-gray-500"> offer </span>
+                    <span className="text-base font-medium text-cyan-500"> offer </span>
                   </p>
                 </div>
               </div>

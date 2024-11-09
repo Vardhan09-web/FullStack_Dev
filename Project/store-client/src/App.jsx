@@ -4,21 +4,24 @@ import Home from './pages/Home'
 import Products from './pages/Products'
 import Contact from './pages/Contact'
 import WebLayout from './layouts/WebLayout'
-
+import AdminLayout from './layouts/AdminLayout'
+import AdminDashboard from './pages/Admin/AdminDashboard'
 
 export const App = () => {
   return (
     <>
-         <BrowserRouter>
-            <Routes>
-                <Route element={<WebLayout/>}>
-                <Route path='/' element={<Home/>} />
-                {/* <Route path='/contact' element={<Contact />}/> */}
-                <Route path='/products' element={<Products/>} />
-                <Route path='/Contact' element={<Contact/>}/>
-                </Route>
-            </Routes>      
-         </BrowserRouter>
+        <BrowserRouter>
+                <Routes>
+                    <Route element={<WebLayout />}>
+                        <Route path='/' element={<Home />} />
+                        <Route path='/products' element={<Products />} />
+                        <Route path='/contact' element={<Contact />} />
+                    </Route>
+                    <Route element={<AdminLayout />}>
+                        <Route path='/admin/dashboard' element={<AdminDashboard/>} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
 
     </>
   )

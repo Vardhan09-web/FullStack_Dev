@@ -4,8 +4,8 @@ import React from 'react'
 const ProductCard = ({ img, price, name }) => {
     return (
         <>
-            <div className="relative flex w-[24%] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-purple-300 to-purple-600">
+            <div className="relative flex w-[24%] flex-col rounded-xl bg-white bg-clip-border text-cyan-700 shadow-md">
+                <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-cyan-300 to-cyan-600">
                     <img src={img} alt={name} className='h-full w-full object-cover' />
                 </div>
                 <div className="p-6">
@@ -17,7 +17,7 @@ const ProductCard = ({ img, price, name }) => {
                     </p>
                 </div>
                 <div className="p-6 pt-0 w-full">
-                    <button data-ripple-light="true" type="button" className="w-full select-none rounded-lg bg-purple-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-purple-500/20 transition-all hover:shadow-lg hover:shadow-purple-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                    <button data-ripple-light="true" type="button" className="w-full select-none rounded-lg bg-cyan-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                         Buy Now
                     </button>
                 </div>
