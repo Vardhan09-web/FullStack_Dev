@@ -31,7 +31,7 @@ const HomeCarousel = () => {
     <>
       <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
         <div>
-          <img className="h-[50vh] object-cover" src="https://cdn.storifyme.com/accounts/cashify-in-0561312/assets/f-best-laptop-medium-74981680898363124.jpeg?t=1680898399000" />
+          <img className="h-[50vh] object-cover" src="https://i.rtings.com/assets/pages/ZRskDBBI/best-laptop-brands-20230420-3-medium.jpg?format=auto" />
           {/* <p className="legend">Mobiles</p> */}
 
           <div className="absolute left-2 bottom-2 flex flex-col bg-white rounded-md">
@@ -39,13 +39,37 @@ const HomeCarousel = () => {
               <div className="grid items-center justify-center w-full grid-cols-1 text-left">
                 <div>
                   <h2 className="text-lg font-medium tracking-tighter text-cyan-600 lg:text-3xl">
-                    Mobiles
+                    Laptops
                   </h2>
                 </div>
                 <div className="mt-6">
                   <p>
-                    <span className="text-5xl font-semibold tracking-tight text-blue-600">
+                    <span className="text-5xl font-semibold tracking-tight text-orange-500">
                       40%
+                    </span>
+                    <span className="text-base font-medium text-cyan-600"> offer </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img className="h-[50vh] object-cover" src="https://m.economictimes.com/thumb/msid-110725032,width-1600,height-900,resizemode-4,imgsize-37070/best-todays-deals-on-mobile-phones-on-amazon-2024.jpg" />
+          {/* <p className="legend">Mobiles</p> */}
+
+          <div className="absolute left-2 bottom-2 flex flex-col bg-white rounded-md">
+            <div className="px-6 py-0 sm:p-10 sm:pb-6">
+              <div className="grid items-center justify-center w-full grid-cols-1 text-left">
+                <div>
+                  <h2 className="text-lg font-medium tracking-tighter text-cyan-600 lg:text-3xl">
+                   Mobiles
+                  </h2>
+                </div>
+                <div className="mt-6">
+                  <p>
+                    <span className="text-5xl font-semibold tracking-tight text-orange-600">
+                      30%
                     </span>
                     <span className="text-base font-medium text-cyan-500"> offer </span>
                   </p>
@@ -61,14 +85,14 @@ const HomeCarousel = () => {
             <div className="px-6 py-8 sm:p-10 sm:pb-6">
               <div className="grid items-center justify-center w-full grid-cols-1 text-left">
                 <div>
-                  <h2 className="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl">
-                    Laptops
+                  <h2 className="text-lg font-medium tracking-tighter text-cyan-600 lg:text-3xl">
+                    Earbuds
                   </h2>
                 </div>
                 <div className="mt-6">
                   <p>
-                    <span className="text-5xl font-semibold tracking-tight text-blue-600">
-                      30%
+                    <span className="text-5xl font-semibold tracking-tight text-orange-600">
+                      20%
                     </span>
                     <span className="text-base font-medium text-cyan-500"> offer </span>
                   </p>
@@ -90,7 +114,7 @@ const HomeCarousel = () => {
                 </div>
                 <div className="mt-6">
                   <p>
-                    <span className="text-5xl font-semibold tracking-tight text-blue-600">
+                    <span className="text-5xl font-semibold tracking-tight text-orange-600">
                       50%
                     </span>
                     <span className="text-base font-medium text-cyan-500"> offer </span>
@@ -105,5 +129,6 @@ const HomeCarousel = () => {
     </>
   )
 }
+
 
 export default HomeCarousel

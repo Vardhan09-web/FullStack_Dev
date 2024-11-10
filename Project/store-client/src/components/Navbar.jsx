@@ -17,9 +17,9 @@ const Navbar = () => {
   ]
   return (
     <>
-      <div className='w-screen h-12 bg-cyan-500 shadow-cyan-500 shadow-md flex justify-center items-center'>
+      <div className='w-screen h-12 bg-cyan-500 shadow-cyan-400 shadow shadow-lg-m flex justify-center items-center'>
         <div className='w-[40%] flex justify-start items-center font-bold text-2xl text-black-500'>
-          App Store
+          SmArt Store
         </div>
         <div className='w-[40%] flex justify-end items-center'>
         <div className='w-full h-full flex flex-row justify-end items-center gap-8 font-bold'>
