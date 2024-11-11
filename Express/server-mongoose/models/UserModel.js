@@ -11,7 +11,7 @@ const {Schema,model} = require("mongoose");
       unique: true,
       required: true,
     },
-    phoneNumber:{
+    phone:{
        type: Number,
        unique: true,
        required: true,

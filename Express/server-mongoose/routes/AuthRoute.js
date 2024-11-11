@@ -1,70 +1,94 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
-const Users = require('../models/UsersModel')
-const bcrypt = require('bcrypt')
+const Users = require('../models/UserModel');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');  
 
+// Register Route
 router.post('/register', async (req, res) => {
     try {
-        // const newuser = new Users(req.body)
-        const { name, email, phone, password } = req.body
+        const { name, email, phone, password } = req.body;
+
+        // Validate required fields
         if (!name || !email || !phone || !password) {
-            return res.status(401).json({ message: "All fields required" })
+            return res.status(400).json({ message: "All fields required" });
         }
 
-        //TODO : Add User Email & Phone Validation
-
-        //Email
-        const exisitingemail = await Users.findOne({email})
-        if(exisitingemail) {
-            return res.status(500).json({ message: `User with ${email} already exists !` })
+        // Email validation (Basic regex)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ message: "Invalid email format" });
         }
 
-        //Phone
-        const exisitingphone = await Users.findOne({phone})
-        if(exisitingphone) {
-            return res.status(500).json({ message: `User with ${phone} already exists !` })
+        // Phone validation (Basic 10-digit validation)
+        const phoneRegex = /^[0-9]{10}$/;
+        if (!phoneRegex.test(phone)) {
+            return res.status(400).json({ message: "Invalid phone number format" });
         }
-        const salt = await bcrypt.genSalt(10)
-        const hashedpassword = await bcrypt.hash(password,salt)
-        const newuser = new Users({
+
+        // Check if email already exists
+        const existingEmail = await Users.findOne({ email });
+        if (existingEmail) {
+            return res.status(409).json({ message: `User with ${email} already exists!` });
+        }
+
+        // Check if phone already exists
+        const existingPhone = await Users.findOne({ phone });
+        if (existingPhone) {
+            return res.status(409).json({ message: `User with ${phone} already exists!` });
+        }
+
+        // Hash the password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        // Create new user
+        const newUser = new Users({
             name,
             email,
             phone,
-            password: hashedpassword
-        })
-        await newuser.save()
-        return res.status(200).json(newuser)
-    } catch (error) {
-        return res.status(500).json({ message: error.message })
-    }
-})
+            password: hashedPassword
+        });
 
+        await newUser.save();
+        return res.status(201).json(newUser);
+
+    } catch (error) {
+        return res.status(500).json({ message: error.message });
+    }
+});
+
+// Login Route
 router.post('/login', async (req, res) => {
     try {
-        // const newuser = new Users(req.body)
-        const {  email, password } = req.body
+        const { email, password } = req.body;
+
+        // Validate required fields
         if (!email || !password) {
-            return res.status(401).json({ message: "All fields required" })
+            return res.status(400).json({ message: "All fields required" });
         }
 
-        //TODO : Add User Email & Phone Validation
-
-        //Email
-        const user = await Users.findOne({email})
-        if(!user) {
-            return res.status(500).json({ message: `Invalid Email` })
+        // Find user by email
+        const user = await Users.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: "Invalid Email" });
         }
-        const checkpassword = await bcrypt.compare(password,user.password)
-        if(!checkpassword){
-            return res.status(500).json({ message: `Invalid Password` })
+
+        // Check password
+        const checkPassword = await bcrypt.compare(password, user.password);
+        if (!checkPassword) {
+            return res.status(401).json({ message: "Invalid Password" });
         }
-        
 
+        // Generate JWT token
+        const secretKey = '183876648211723628237618391';
+        const token = jwt.sign({ email: email }, secretKey, { expiresIn: '1d' });
 
-        return res.status(200).json({ message: "login success" })
+        return res.status(200).json({ message: "Login successful", token: token });
+
     } catch (error) {
-        return res.status(500).json({ message: error.message })
+        return res.status(500).json({ message: error.message });
     }
-})
+});
 
-module.exports = router
+module.exports = router;
