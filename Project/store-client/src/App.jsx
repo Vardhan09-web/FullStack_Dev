@@ -7,6 +7,7 @@ import WebLayout from './layouts/WebLayout'
 import AdminLayout from './layouts/AdminLayout'
 import AdminDashboard from './pages/Admin/AdminDashboard'
 import AdminProducts from './pages/Admin/AdminProducts'
+import AdminOrders from './pages/Admin/AdminOrders'
 import AdminUsers from './pages/Admin/AdminUsers'
 import AdminSettings from './pages/Admin/AdminSettings'
 export const App = () => {
@@ -22,7 +23,8 @@ export const App = () => {
                     <Route element={<AdminLayout />}>
                         <Route path='/admin/dashboard' element={<AdminDashboard/>} />
                        <Route path='/admin/products' element={<AdminProducts/>} />
-                       <Route path='/admin/users' element={<AdminUsers/>} /> 
+                       <Route path='/admin/orders' element={<AdminOrders />} />
+                      <Route path='/admin/users' element={<AdminUsers/>} /> 
                        <Route path='/admin/settings' element={<AdminSettings/>} />
                     </Route>
                 </Routes>

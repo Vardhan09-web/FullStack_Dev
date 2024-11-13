@@ -16,6 +16,10 @@ const AdminLeftBar = () => {
       path: '/admin/users'
     },
     {
+      title: 'Orders',
+      path: '/admin/orders'
+    },
+    {
       title: 'Settings',
       path: '/admin/settings'
     }
