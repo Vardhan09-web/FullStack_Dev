@@ -20,6 +20,11 @@ const {Schema,model} = require("mongoose");
         type: String,
         required: true,
     },
+    role: {
+      type: String,
+      enum: ["ADMIN", "USER"],
+      required: true,
+  },
     address:{
     type: String,
     required: false,
