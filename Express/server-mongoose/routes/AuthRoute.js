@@ -47,6 +47,7 @@ router.post('/register', async (req, res) => {
             name,
             email,
             phone,
+            role: "USER",
             password: hashedPassword
         });
 
@@ -82,8 +83,8 @@ router.post('/login', async (req, res) => {
 
         // Generate JWT token
         const secretKey = '183876648211723628237618391';
-        const token = jwt.sign({ email: email }, secretKey, { expiresIn: '1d' });
-
+        // const token = jwt.sign({ email: email }, secretKey, { expiresIn: '1d' });
+        const token = jwt.sign({ email: email, role: user.role, exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24 * 7) }, secretkey)
         return res.status(200).json({ message: "Login successful", token: token });
 
     } catch (error) {

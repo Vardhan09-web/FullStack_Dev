@@ -4,7 +4,7 @@ const Products = require('../models/ProductsModel');
 const validate = require('../configs/auth')
 
 // Endpoint to get all products
-router.get('/all',validate, async (req, res) => {
+router.get('/all', async (req, res) => {
     try {
         const products = await Products.find(); // Fetch all products from the database
         return res.status(200).json(products); // Return the products as JSON

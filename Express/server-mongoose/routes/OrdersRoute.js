@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const Orders = require('../models/OrdersModel')
-
+const validate = require('../configs/auth')
 router.get('/all', async (req, res) => {
     try {
         const orders = await Orders.find()
