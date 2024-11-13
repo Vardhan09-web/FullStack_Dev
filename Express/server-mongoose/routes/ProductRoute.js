@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Products = require('../models/ProductsModel');
-const validate = require('../configs/auth')
+//const validate = require('../configs/auth')
 
 // Endpoint to get all products
 router.get('/all', async (req, res) => {
@@ -29,18 +29,17 @@ router.post('/addproduct', async (req, res) =>{
 })
 
 
-router.put('/update:id', async (req,res) =>{
-    try{
+router.put('/edit/:id', async (req, res) => {
+    try {
         const id = req.params.id
-        const existproduct = await Products.findOne({ _id: id})
-        if(!existproduct){
-            res.status(401).json({message:"Product not found"})
+        const existingproduct = await Products.findOne({ _id: id })
+        if (!existingproduct) {
+            res.status(404).json({ message: "Product not found" })
         }
         const updatedproduct = await Products.findByIdAndUpdate(id, req.body, { new: true })
         res.status(200).json(updatedproduct)
-    }
-    catch(error){
-        res.status(500).json({ message: error.message });
+    } catch (error) {
+        res.status(500).json({ message: error.message })
     }
 })
 
