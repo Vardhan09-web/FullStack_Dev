@@ -4,15 +4,26 @@ const Products = require('../models/ProductsModel');
 //const validate = require('../configs/auth')
 
 // Endpoint to get all products
-router.get('/all', async (req, res) => {
+router.get('/count', async (req, res) => {
     try {
-        const products = await Products.find(); // Fetch all products from the database
-        return res.status(200).json(products); // Return the products as JSON
+        const count = await Products.countDocuments(); 
+        return res.status(200).json({count : count }); 
     } catch (error) {
-       return res.status(500).json({ message: error.message }); // Return error if something goes wrong
+       return res.status(500).json({ message: error.message }); 
     }
 });
 
+// Method : GET  || API : localhost:5000/products/all
+router.get('/all', async (req, res) => {
+    try {
+        const products = await Products.find()
+        return res.status(200).json(products)
+    } catch (error) {
+        return res.status(500).json({ message: error.message })
+    }
+})
+
+// Method : POST  || API : localhost:5000/products/addproduct
 router.post('/addproduct', async (req, res) =>{
     try {
       const ProductData = new Products(req.body)
