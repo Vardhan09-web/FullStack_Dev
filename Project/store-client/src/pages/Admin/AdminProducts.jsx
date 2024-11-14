@@ -18,7 +18,7 @@ const AdminProducts = () => {
   async function fetchData() {
     try {
       const res = await getProducts()
-      console.log(res)
+      //console.log(res)
       if (res.status === 200) {
         setProducts(res.data)
       }
